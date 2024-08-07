@@ -1,14 +1,26 @@
-import React from "react";
+import React, {useState} from "react";
 import './../styles/App.css';
 import Child from "./child.js";
 
 const App = () => {
-  let todos = [{ t: "learn React" }, { t: "Build a React app" }, { t: "Deploy the React app" }]
+  const [todos, setTodos] =useState([{id:1, t: "learn React",complated:false }, {id:2, t: "Build a React app" , complated:false }, {id:3, t: "Deploy the React app", complated:false }]);
+  function handleComplete(id){
+    
+        setTodos(
+          todos.map((elem)=>{
+      if(elem.id==id){
+        return {...elem, completed:true};
+      }else{
+        return{...elem}
+      }
+    })
+  )
+  }
   return (
     <>
-      {todos.map((elem) => (
-        <Child datas={elem.t} />
-      ))}
+   
+        <Child datas={todos} handleComplete={handleComplete} />
+     
     </>
   )
 };
