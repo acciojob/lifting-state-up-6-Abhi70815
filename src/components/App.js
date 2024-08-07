@@ -1,16 +1,14 @@
-import React from 'react';
-import './../styles/App.css';
-import Child from './child';
-
-
-
+import React from "react";
+import Todo from "./Todo.js";
+import "./../styles/App.css";
+ 
 const App = () => {
   return (
     <div>
       <h1>Parent Component</h1>
-      <Child />
+      <Todo />
     </div>
   );
 };
-
+ 
 export default App;
