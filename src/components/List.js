@@ -1,4 +1,4 @@
-List.js
+
 import React, { useState } from "react";
  
 const List = ({ text }) => {
